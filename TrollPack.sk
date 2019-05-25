@@ -1,10 +1,10 @@
-# TrollPack 1.5
+# TrollPack 1.5_01
 # by im_a_waffle1
 # Spigot Edition
  
 options:
     Prefix: &6[&5Troll&aPack&6]
-    Version: 1.5
+    Version: 1.5_01
  
  
 command /trollpack <text="info"> [<text>] [<text>] [<text>]:
@@ -65,7 +65,7 @@ command /trollpack <text="info"> [<text>] [<text>] [<text>]:
                 message "&cStaff Commands (trollpack.use.staff):"
                 message "&2/trollpack join - Good for disguise"
                 message "&2/trollpack leave - Good for disguise"
-                message "&2/trollpack version;v - Checks current version."
+                message "&2/trollpack version - Checks current version."
                 message "&2/trollpack slotmachine [item/player/text] - Rolls the slot machine!"
                 message "&2------------------------------------------"
             else:
@@ -134,7 +134,7 @@ command /trollpack <text="info"> [<text>] [<text>] [<text>]:
                 broadcast "{@Prefix} &7%player% has TOTALLY left the game :)"
             else:
                 message "{@Prefix} &4You do not have permission to perform this command. If this is an issue, contact a server administator."
-        if arg-1 is "version" or "v":
+        if arg-1 is "version":
             if player has permission "trollpack.use.staff":
                 message "{@Prefix} &6The detected version of TrollPack that is currently on this server is {@Version}."
             else:
