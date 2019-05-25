@@ -1,0 +1,132 @@
+# TrollPack 1.4_01
+# by im_a_waffle1
+# Spigot Edition
+ 
+options:
+    Prefix: &6[&5Troll&aPack&6]
+    Version: 1.4_01
+ 
+ 
+command /trollpack <text="info"> [<text>] [<text>] [<text>]:
+    permission: trollpack.use
+    permission message: {@Prefix} &4You do not have permission to perform this command. If this is an issue, contact a server administator.
+    usage: &aType &e/trollpack help &afor more help.
+    aliases: /tpack, /trollp, /trp
+    trigger:
+        if arg-1 is "info" or "i":
+            message "&2------------------------------------------"
+            message "&6TrollPack {@Version}"
+            message "&5By im_a_waffle1 - awaffle1 Planet Minecraft"
+            message "&2For help, do /trollpack help"
+            message "&2------------------------------------------"
+        if arg-1 is "help" or "h" or "?":
+            if arg-2 is "player":
+                message "&2------------------------------------------"
+                message "&6TrollPack {@Version}"
+                message "&5By im_a_waffle1 - awaffle1 Planet Minecraft"
+                message "&r"
+                message "&5<> - Required"
+                message "&5[] - Optional"
+                message "&r"
+                message "&7Player Commands (trollpack.use):"
+                message "&2/trollpack info;i - Brings up the information menu"
+                message "&2/trollpack help;h;? [page] - Brings up the help menu (this one!)"
+                message "&2/trollpack oof - OOF"
+                message "&2/trollpack hack [player/text] - come on. confess."
+                message "&2/trollpack vanish;v - Wait really?!"
+                message "&2/trollpack dlightmode - Why"
+                message "&2/trollpack question [player/text] - Is mayo an instrument?"
+                message "&2------------------------------------------"
+            if arg-2 is "ranked":
+                message "&2------------------------------------------"
+                message "&6TrollPack {@Version}"
+                message "&5By im_a_waffle1 - awaffle1 Planet Minecraft"
+                message "&r"
+                message "&5<> - Required"
+                message "&5[] - Optional"
+                message "&r"
+                message "&aRanked Commands (trollpack.use.ranked):"
+                message "&2/trollpack iamrich;imr - It's true. I bought this rank."
+                message "&2/trollpack operator;op - EVEN BETTER THEN VANISH"
+                message "&2/trollpack uok - I don't know if he's alright."
+                message "&2/trollpack aussie;aus - I don't have anything against australians other then KANGAROOS"
+                message "&2------------------------------------------"
+            if arg-2 is "staff":
+                message "&2------------------------------------------"
+                message "&6TrollPack {@Version}"
+                message "&5By im_a_waffle1 - awaffle1 Planet Minecraft"
+                message "&r"
+                message "&5<> - Required"
+                message "&5[] - Optional"
+                message "&r"
+                message "&cStaff Commands (trollpack.use.staff):"
+                message "&2/trollpack join - Good for disguise"
+                message "&2/trollpack leave - Good for disguise"
+                message "&2/trollpack version;v - Checks current version."
+                message "&2/trollpack slotmachine [item/player/text] - Rolls the slot machine!"
+                message "&2------------------------------------------"
+            else:
+                message "&2------------------------------------------"
+                message "&7Welcome to TrollPack {@Version}"
+                message "&7To find your commands, use these:"
+                message "&r"
+                message "&2/trollpack help player"
+                message "&2/trollpack help ranked"
+                message "&2/trollpack help staff"
+                message "&r"
+                message "&7If you typed one of these commands in, the help menu may appear above this message."
+                message "&2------------------------------------------"
+        if arg-1 is "oof":
+            broadcast "{@Prefix} &2%player% is a super oof."
+        if arg-1 is "hack":
+            broadcast "{@Prefix} &5%player% thinks %arg-2% is hacking. I doubt that."
+        if arg-1 is "vanish" or "v":
+            broadcast "{@Prefix} &a[SV] %player% was never in vanish to begin with."
+        if arg-1 is "dlightmode":
+            broadcast "{@Prefix} &3%player% uses Discord Light Mode :("
+        if arg-1 is "question":
+            broadcast "{@Prefix} &6Before you get lost, %player% wants to ask %arg-2% a stupid question."
+        if arg-1 is "iamrich" or "imr":
+            if player has permission "trollpack.use.ranked":
+                broadcast "{@Prefix} &7I &8Am &9Rich. &6%player%"
+            else:
+                message "{@Prefix} &4You do not have permission to perform this command. If this is an issue, contact a server administator."
+        if arg-1 is "operator" or "op":
+            if player has permission "trollpack.use.ranked":
+                broadcast "{@Prefix} &7&o[Server: Deopped %player%]"
+            else:
+                message "{@Prefix} &4You do not have permission to perform this command. If this is an issue, contact a server administator."
+        if arg-1 is "uok":
+            if player has permission "trollpack.use.ranked":
+                broadcast "{@Prefix} &3Are you ok there? - From %player%"
+            else:
+                message "{@Prefix} &4You do not have permission to perform this command. If this is an issue, contact a server administator."
+        if arg-1 is "aussie" or "aus":
+            if player has permission "trollpack.use.ranked":
+                broadcast "{@Prefix} &5Look out! He's an Australian! &4&lTHE KANGAROOS ARE COMING %player%!!!"
+            else:
+                message "{@Prefix} &4You do not have permission to perform this command. If this is an issue, contact a server administator."
+        if arg-1 is "join":
+            if player has permission "trollpack.use.staff":
+                broadcast "{@Prefix} &7%player% has TOTALLY joined the game :)"
+            else:
+                message "{@Prefix} &4You do not have permission to perform this command. If this is an issue, contact a server administator."
+        if arg-1 is "leave":
+            if player has permission "trollpack.use.staff":
+                broadcast "{@Prefix} &7%player% has TOTALLY left the game :)"
+            else:
+                message "{@Prefix} &4You do not have permission to perform this command. If this is an issue, contact a server administator."
+        if arg-1 is "version" or "v":
+            if player has permission "trollpack.use.staff":
+                message "{@Prefix} &6The detected version of TrollPack that is currently on this server is {@Version}."
+            else:
+                message "{@Prefix} &4You do not have permission to perform this command. If this is an issue, contact a server administator."
+        if arg-1 is "slotmachine":
+            if player has permission "trollpack.use.staff":
+                broadcast "{@Prefix} &6%player% rolled the slot machine and got an amazing %arg-2%"
+            else:
+                message "{@Prefix} &4You do not have permission to perform this command. If this is an issue, contact a server administator."
+ 
+on join:
+    if player has permission "trollpack.updatenotify":
+        message "{@Prefix} &6Remember to check for updates on Spigot! This version ({@Version}) may be out of date."
