@@ -1,10 +1,10 @@
-# TrollPack 1.4_01
+# TrollPack 1.5
 # by im_a_waffle1
 # Spigot Edition
  
 options:
     Prefix: &6[&5Troll&aPack&6]
-    Version: 1.4_01
+    Version: 1.5
  
  
 command /trollpack <text="info"> [<text>] [<text>] [<text>]:
@@ -50,6 +50,9 @@ command /trollpack <text="info"> [<text>] [<text>] [<text>]:
                 message "&2/trollpack operator;op - EVEN BETTER THEN VANISH"
                 message "&2/trollpack uok - I don't know if he's alright."
                 message "&2/trollpack aussie;aus - I don't have anything against australians other then KANGAROOS"
+                message "&2/trollpack illuminati - :o"
+                message "&2/trollpack fixmylife - It's too bad to fix."
+                message "&2/trollpack thought;think - When you think too much"
                 message "&2------------------------------------------"
             if arg-2 is "staff":
                 message "&2------------------------------------------"
@@ -106,6 +109,21 @@ command /trollpack <text="info"> [<text>] [<text>] [<text>]:
                 broadcast "{@Prefix} &5Look out! He's an Australian! &4&lTHE KANGAROOS ARE COMING %player%!!!"
             else:
                 message "{@Prefix} &4You do not have permission to perform this command. If this is an issue, contact a server administator."
+        if arg-1 is "illuminati":
+            if player has permission "trollpack.use.ranked":
+                broadcast "{@Prefix} &0%player% summoned the illuminati. duNdUNdUUUNDUNdUUUNDuN"
+            else:
+                message "{@Prefix} &4You do not have permission to perform this command. If this is an issue, contact a server administator."
+        if arg-1 is "fixmylife":
+            if player has permission "trollpack.use.ranked":
+                broadcast "{@Prefix} &7%player% called the mechanic and asked 'Can you fix my life?' The mechanic replyed 'No, but we can fix your car!' THESE GOD DAMN MECHANICS ALWAYS ON MY NERVES"
+            else:
+                message "{@Prefix} &4You do not have permission to perform this command. If this is an issue, contact a server administator."
+        if arg-1 is "thought" or "think":
+            if player has permission "trollpack.use.ranked":
+                broadcast "{@Prefix} &6%player% likes to think. *casual head explosion cuz of too much memory. 2.001 TB out of 2 TB.*"
+            else:
+                message "{@Prefix} &4You do not have permission to perform this command. If this is an issue, contact a server administator."
         if arg-1 is "join":
             if player has permission "trollpack.use.staff":
                 broadcast "{@Prefix} &7%player% has TOTALLY joined the game :)"
@@ -129,4 +147,4 @@ command /trollpack <text="info"> [<text>] [<text>] [<text>]:
  
 on join:
     if player has permission "trollpack.updatenotify":
-        message "{@Prefix} &6Remember to check for updates on Spigot! This version ({@Version}) may be out of date."
+        message "{@Prefix} &6Remember to check for updates on Spigot (or Github)! This version ({@Version}) may be out of date."
