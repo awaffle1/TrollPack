@@ -1,2 +1,1 @@
-# TrollPack
-# A TrollPack skript for the Skript Minecraft server plugin.
+This repository is now obsolete.
