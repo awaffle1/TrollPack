@@ -1,0 +1,274 @@
+# TrollPack 1.7
+# by im_a_waffle1
+
+# CONFIG
+
+options:
+    Prefix: &6(&5Troll&aPack&6)
+    Version: 1.7.2
+    pd: &4You do not have permission to perform this command. If this is an issue, contact a server administator.
+ 
+on load:
+    set {_trpls} to now
+    broadcast "{@Prefix} &2TrollPack &6{@Version}&2 by im_a_waffle1"
+    set {_trple} to now
+    set {_trplr} to difference between {_trpls} and {_trple}
+    broadcast "{@Prefix} &2Loaded skript in %{_trplr}%&6."
+ 
+command /trollpack <text="info"> [<text>] [<text>] [<text>]:
+    permission: trollpack.use
+    permission message: {@Prefix} {@pd}
+    aliases: /trp
+    trigger:
+
+        # INFORMATION MENU
+
+        if arg-1 is "info" or "i":
+            message "&2------------------------------------------"
+            message "&6TrollPack {@Version}"
+            message "&5By im_a_waffle1 - awaffle1 Planet Minecraft"
+            message "&2For help, do /trollpack help"
+            message "&2------------------------------------------"
+
+        # HELP MENU
+
+        if arg-1 is "help" or "h" or "?":
+            if arg-2 is "player":
+                message "&2------------------------------------------"
+                message "&6TrollPack {@Version}"
+                message "&5By im_a_waffle1 - awaffle1 Planet Minecraft"
+                message "&r"
+                message "&5<> - Required"
+                message "&5[] - Optional"
+                message "&r"
+                message "&7Player Commands (trollpack.use):"
+                message "&2/trollpack info;i - Brings up the information menu"
+                message "&2/trollpack help;h;? [page] - Brings up the help menu (this one!)"
+                message "&2/trollpack oof - OOF"
+                message "&2/trollpack hack [player/text] - come on. confess."
+                message "&2/trollpack vanish;v - Wait really?!"
+                message "&2/trollpack dlightmode - Why"
+                message "&2/trollpack question [player/text] - Is mayo an instrument?"
+                message "&2/trollpack yudodis - Y U SO DO DIS???????"
+                message "&2------------------------------------------"
+            else if arg-2 is "ranked":
+                message "&2------------------------------------------"
+                message "&6TrollPack {@Version}"
+                message "&5By im_a_waffle1 - awaffle1 Planet Minecraft"
+                message "&r"
+                message "&5<> - Required"
+                message "&5[] - Optional"
+                message "&r"
+                message "&aRanked Commands (trollpack.use.ranked):"
+                message "&2/trollpack iamrich;imr - It's true. I bought this rank."
+                message "&2/trollpack operator;op - EVEN BETTER THEN VANISH"
+                message "&2/trollpack uok - I don't know if he's alright."
+                message "&2/trollpack aussie;aus - I don't have anything against australians other then KANGAROOS"
+                message "&2/trollpack illuminati - :o"
+                message "&2/trollpack fixmylife - It's too bad to fix."
+                message "&2/trollpack thought;think - When you think too much"
+                message "&2------------------------------------------"
+            else if arg-2 is "staff":
+                message "&2------------------------------------------"
+                message "&6TrollPack {@Version}"
+                message "&5By im_a_waffle1 - awaffle1 Planet Minecraft"
+                message "&r"
+                message "&5<> - Required"
+                message "&5[] - Optional"
+                message "&r"
+                message "&cStaff Commands (trollpack.use.staff):"
+                message "&2/trollpack join - Good for disguise"
+                message "&2/trollpack leave - Good for disguise"
+                message "&2/trollpack slotmachine [item/player/text] - Rolls the slot machine!"
+                message "&2/trollpack ban [player/text] [text] - bans someone for real"
+                message "&2/trollpack thicc - When I don't have ideas for commands so I just use memes"
+                message "&2------------------------------------------"
+            else if arg-2 is "operator":
+                message "&2------------------------------------------"
+                message "&6TrollPack {@Version}"
+                message "&5By im_a_waffle1 - awaffle1 Planet Minecraft"
+                message "&r"
+                message "&cPLEASE NOTE: THE EFFECT COMMANDS USE THE COMMAND /trollpacko TO MAKE EFFECTS WORK WITHOUT CONSOLE SPAM"
+                message "&r"
+                message "&5<> - Required"
+                message "&5[] - Optional"
+                message "&r"
+                message "&4OPERATOR COMMANDS (trollpack.use.operator):"
+                message "&2/trollpacko bunny <player> - Next time they jump... Lasts 25 seconds."
+                message "&2/trollpacko fly <player> - Triggers Essentials and causes the player to be auto-kicked from the server (if they are not an operator). Use at your own risk. Lasts 10 seconds."
+                message "&2/trollpacko out <player> - Gives the player speed 255 and make them blast out of the universe. Lasts 25 seconds."
+                message "&2/trollpacko combo <player> - Combines bunny, fly, and out in one command. Lasts 10 seconds."
+                message "&2/trollpacko hangry <player> - When you run out of food and you're burning off energy like crazy lol - Gives the player hunger 255 for 25 seconds."
+                message "&2------------------------------------------"
+            else if arg-2 is "debug":
+                message "&2------------------------------------------"
+                message "&6TrollPack {@Version}"
+                message "&5By im_a_waffle1 - awaffle1 Planet Minecraft"
+                message "&r"
+                message "&5<> - Required"
+                message "&5[] - Optional"
+                message "&r"
+                message "&7DEBUG COMMANDS (trollpack.use.debug):"
+                message "&2/trollpack version - Checks current version"
+                message "&2"
+                message "&2------------------------------------------"
+            else:
+                message "&2------------------------------------------"
+                message "&7Welcome to TrollPack {@Version}"
+                message "&7To find your commands, use these:"
+                message "&r"
+                message "&2/trollpack help player"
+                message "&2/trollpack help ranked"
+                message "&2/trollpack help staff"
+                message "&2/trollpack help operator"
+                message "&2/trollpack help debug"
+                message "&r"
+                message "&2------------------------------------------"
+
+        # DEFAULT
+
+        if arg-1 is "oof":
+            broadcast "{@Prefix} &2%player% is a super oof."
+        if arg-1 is "hack":
+            broadcast "{@Prefix} &5%player% thinks %arg-2% is hacking. I doubt that."
+        if arg-1 is "vanish" or "v":
+            broadcast "{@Prefix} &a[SV] %player% was never in vanish to begin with."
+        if arg-1 is "dlightmode":
+            broadcast "{@Prefix} &3%player% uses Discord Light Mode :("
+        if arg-1 is "question":
+            broadcast "{@Prefix} &6Before you get lost, %player% wants to ask %arg-2% a stupid question."
+        if arg-1 is "yudodis":
+            broadcast "{@Prefix} &b%player% WANTS TO KNOW Y U SO DO DIS???????"
+
+        # RANKED
+
+        if arg-1 is "iamrich" or "imr":
+            if player has permission "trollpack.use.ranked":
+                broadcast "{@Prefix} &7I &8Am &9Rich. &6%player%"
+            else:
+                message "{@Prefix} {@pd}"
+        if arg-1 is "operator" or "op":
+            if player has permission "trollpack.use.ranked":
+                broadcast "{@Prefix} &7&o[Server: Deopped %player%]"
+            else:
+                message "{@Prefix} {@pd}"
+        if arg-1 is "uok":
+            if player has permission "trollpack.use.ranked":
+                broadcast "{@Prefix} &3Are you ok there? - From %player%"
+            else:
+                message "{@Prefix} {@pd}"
+        if arg-1 is "aussie" or "aus":
+            if player has permission "trollpack.use.ranked":
+                broadcast "{@Prefix} &5Look out! He's an Australian! &4&lTHE KANGAROOS ARE COMING %player%!!!"
+            else:
+                message "{@Prefix} {@pd}"
+        if arg-1 is "illuminati":
+            if player has permission "trollpack.use.ranked":
+                broadcast "{@Prefix} &0%player% summoned the illuminati. duNdUNdUUUNDUNdUUUNDuN"
+            else:
+                message "{@Prefix} {@pd}"
+        if arg-1 is "fixmylife":
+            if player has permission "trollpack.use.ranked":
+                broadcast "{@Prefix} &7%player% called the mechanic and asked 'Can you fix my life?' The mechanic replyed 'No, but we can fix your car!' THESE GOD DAMN MECHANICS ALWAYS ON MY NERVES"
+            else:
+                message "{@Prefix} {@pd}"
+        if arg-1 is "thought" or "think":
+            if player has permission "trollpack.use.ranked":
+                broadcast "{@Prefix} &6%player% likes to think. *casual head explosion cuz of too much memory. 2.001 TB out of 2 TB.*"
+            else:
+                message "{@Prefix} {@pd}"
+
+        # STAFF
+
+        if arg-1 is "join":
+            if player has permission "trollpack.use.staff":
+                broadcast "{@Prefix} &7%player% has TOTALLY joined the game :)"
+            else:
+                message "{@Prefix} {@pd}"
+        if arg-1 is "leave":
+            if player has permission "trollpack.use.staff":
+                broadcast "{@Prefix} &7%player% has TOTALLY left the game :)"
+            else:
+                message "{@Prefix} {@pd}"
+        if arg-1 is "thicc":
+            if player has permission "trollpack.use.staff":
+                broadcast "{@Prefix} &6%player% has done the command. The command that contains ALL that is thicc and holy."
+            else:
+                message "{@Prefix} {@pd}"
+        if arg-1 is "slotmachine":
+            if player has permission "trollpack.use.staff":
+                broadcast "{@Prefix} &6%player% rolled the slot machine and got an amazing %arg-2%"
+            else:
+                message "{@Prefix} {@pd}"
+        if arg-1 is "ban":
+            if player has permission "trollpack.use.staff":
+                broadcast "{@Prefix} &6%player%&a has banned &6%arg-2%&a (not legit) for&6 %arg-3%"
+            else:
+                message "{@Prefix} {@pd}"
+
+        # DEBUG
+
+        if arg-1 is "version":
+            if player has permission "trollpack.use.debug":
+                message "{@Prefix} &6The detected version of TrollPack that is currently on this server is {@Version}."
+            else:
+                message "{@Prefix} {@pd}"
+
+command /trollpacko <text> [<player>]:
+    usage: &4For help, use /trollpack help operator
+    permission: trollpack.use.operator
+    permission message: {@Prefix} {@pd}
+    aliases: /trpo
+    trigger:
+        # OPERATOR
+
+        if arg-1 is "bunny":
+            if player has permission "trollpack.use.operator":
+                message "{@Prefix} &7%arg-2% is now a bunny."
+                apply potion of jump boost of tier 100 to arg-2 for 25 seconds
+            else:
+                message "{@Prefix} {@pd}"
+        if arg-1 is "fly":
+            if player has permission "trollpack.use.operator":
+                message "{@Prefix} &7%arg-2% is now flying. This player may trigger an essentials kick, to clear their fly effect before it ends do /effect clear %arg-1%"
+                apply potion of levitation of tier 100 to arg-2 for 10 seconds
+            else:
+                message "{@Prefix} {@pd}"
+        if arg-1 is "out":
+            if player has permission "trollpack.use.operator":
+                message "{@Prefix} &7%arg-2% is now blasting out of the universe and rubber-banding everywhere. Sounds like fun."
+                apply potion of speed of tier 255 to arg-2 for 25 seconds
+            else:
+                message "{@Prefix} {@pd}"
+        if arg-1 is "combo":
+            if player has permission "trollpack.use.operator":
+                message "{@Prefix} &7%arg-2% is now having a seizure."
+                apply potion of jump boost of tier 100 to arg-2 for 10 seconds
+                apply potion of levitation of tier 100 to arg-2 for 10 seconds
+                apply potion of speed of tier 255 to arg-2 for 10 seconds
+            else:
+                message "{@Prefix} {@pd}"
+        if arg-1 is "hangry":
+            if player has permission "trollpack.use.operator":
+                message "{@Prefix} &6%arg-2% is now starving."
+                apply potion of hunger of tier 255 to arg-2 for 25 seconds
+            else:
+                message "{@Prefix} {@pd}"
+
+command /welcomemessage:
+    aliases: /wm
+    permission: trollpack.welcomemessage
+    permission message: {@Prefix} {@pd}
+    trigger:
+        if {nowelcomemessage} is not set:
+            set {nowelcomemessage} to true
+            send "{@Prefix} &6Disabled welcome message. To reenable, please execute /welcomemessage"
+        else:
+            delete {nowelcomemessage}
+            send "{@Prefix} &6Welcome message enabled. To disable, please execute /welcomemessage"
+
+on join:
+    if {nowelcomemessage} is not set:
+        if player has permission "trollpack.updatenotify":
+            message "{@Prefix} &6Remember to check for updates on Spigot! This version ({@Version}) may be out of date."
+        message "{@Prefix} &5Welcome back %player%&5! Remember to do /trollpack one time when you're on here :)"
